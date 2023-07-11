@@ -2,7 +2,7 @@ const data = {
   products: [
     {
       name: "pizza",
-      slug: "pizza",
+      slug: "special-pizza",
       price: 120,
       description: "good Pizza",
       image: "/images/p1.png",
@@ -13,7 +13,7 @@ const data = {
     },
     {
       name: "Burger",
-      slug: "Burger",
+      slug: "special-Burger",
       price: 120,
       description: "good burder",
       image: "/images/p2.png",
@@ -24,7 +24,7 @@ const data = {
     },
     {
       name: "Shawarma",
-      slug: "Shawarma",
+      slug: "special-Shawarma",
       price: 120,
       description: "good Shawarma",
       image: "/images/p3.png",
