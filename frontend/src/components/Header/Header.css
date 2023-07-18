@@ -1,0 +1,106 @@
+:root {
+  --primary-color: #1f1a17;
+}
+.logo {
+  width: 60px;
+  height: 60px;
+}
+
+.btnSignIn {
+  background-color: #e5be69;
+  color: var(--primary-color);
+  border-radius: 21px !important;
+}
+.btnSignIn:hover {
+  background-color: var(--primary-color);
+  color: #e5be69;
+  border-color: #e5be69;
+  -webkit-transform: translateY(-0.2rem) !important;
+  transform: translateY(-0.2rem) !important;
+}
+
+.btnSignIn:active {
+  background-color: #e5be691a !important;
+  color: #f1f8f9 !important;
+  border-color: #e5be69 !important;
+}
+.btnDelivery {
+  border-top-left-radius: 21px !important;
+  border-bottom-left-radius: 21px !important;
+  border-color: #e5be69 !important;
+  color: #e5be69 !important;
+}
+.btnPickUp {
+  border-top-right-radius: 21px !important;
+  border-bottom-right-radius: 21px !important;
+  border-color: #e5be69 !important;
+  color: #e5be69 !important;
+}
+.btn-check + .btn:hover {
+  background-color: #e5be69 !important;
+  color: var(--primary-color) !important;
+  border-color: #e5be69 !important;
+}
+.btn-check:checked + .btn,
+.btn.active,
+.btn.show,
+.btn:first-child:active,
+:not(.btn-check) + .btn:active {
+  background-color: #e5be69 !important;
+  color: var(--primary-color) !important;
+  border-color: #e5be69 !important;
+}
+.navbar-toggler-icon {
+  filter: invert(1);
+}
+.btnBucket {
+  transition: 0.4s all ease;
+}
+.btnBucket:hover {
+  -webkit-transform: translateY(-0.2rem) !important;
+  transform: translateY(-0.2rem) !important;
+}
+.btnBucket.onSmallScreen {
+  display: none;
+}
+
+/* media queries */
+
+/* sm` applies to x-small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+  .logo {
+    width: 40px;
+    height: 40px;
+  }
+  .btnBucket.onSmallScreen {
+    display: block;
+  }
+  .categoryImg {
+    height: 80px !important;
+    width: 80px !important;
+  }
+  .bgImage {
+    height: 100px !important;
+  }
+  .card {
+    width: 80% !important;
+    margin: 0 auto;
+  }
+}
+/* `lg` applies to medium devices (tablets, less than 992px)  */
+@media (max-width: 991.98px) {
+  .logo {
+    width: 40px;
+    height: 40px;
+  }
+  .btnBucket.onSmallScreen {
+    display: block;
+  }
+  .categoryImg {
+    height: 80px !important;
+    width: 80px !important;
+  }
+  .bgImage {
+    height: 100px !important;
+  }
+}

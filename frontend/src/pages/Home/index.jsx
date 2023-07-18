@@ -1,5 +1,9 @@
+
+
 import { useEffect, useReducer } from 'react';
 import axios from 'axios';
+import Header from '../../components/Header'
+
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -23,8 +27,8 @@ const logger = (reducer) => {
     return newState;
   };
 };
+const Home = () => {
 
-function App() {
   const [state, dispatch] = useReducer(logger(reducer), {
     products: [],
     loading: true,
@@ -50,26 +54,28 @@ function App() {
 
     fetchData();
   }, []);
-
   return (
     <div>
-      <h1>Data</h1>
+      <Header />
 
-      {loading ? (
-        <p>Loading...</p>
-      ) : error ? (
-        <p>Error: {error}</p>
-      ) : products.length > 0 ? (
-        products.map((product) => (
-          <div key={product.slug}>
-            <img src={product.image} alt={product.slug} />
-          </div>
-        ))
-      ) : (
-        <p>No products available</p>
-      )}
+      <div>
+        {loading ? (
+          <p>Loading...</p>
+        ) : error ? (
+          <p>Error: {error}</p>
+        ) : products.length > 0 ? (
+          products.map((product) => (
+            <div key={product.slug}>
+              <img src={product.image} alt={product.slug} />
+            </div>
+          ))
+        ) : (
+          <p>No products available</p>
+        )}
+      </div>
+
     </div>
-  );
+  )
 }
 
-export default App;
+export default Home
