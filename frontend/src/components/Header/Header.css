@@ -1,55 +1,78 @@
+/* Header.css */
 :root {
   --primary-color: #1f1a17;
+  --secondary-color: #e5be69; /* New secondary color for hover and active states */
 }
+
+/* ... Rest of the CSS rules ... */
 .logo {
   width: 60px;
   height: 60px;
 }
 
 .btnSignIn {
-  background-color: #e5be69;
+  background-color: var(
+    --secondary-color
+  ); /* Use the secondary color as the background */
   color: var(--primary-color);
-  border-radius: 21px !important;
+  border-radius: 20px; /* Set border radius to 20px */
 }
+
 .btnSignIn:hover {
   background-color: var(--primary-color);
-  color: #e5be69;
-  border-color: #e5be69;
-  -webkit-transform: translateY(-0.2rem) !important;
-  transform: translateY(-0.2rem) !important;
+  color: var(--secondary-color);
+  border-color: var(--secondary-color);
+  transform: scale(1.05); /* Apply scale transformation on hover */
 }
 
 .btnSignIn:active {
-  background-color: #e5be691a !important;
+  background-color: rgba(
+    229,
+    190,
+    105,
+    0.1
+  ) !important; /* New background color for active state */
   color: #f1f8f9 !important;
-  border-color: #e5be69 !important;
+  border-color: var(--secondary-color) !important;
+  transform: scale(0.95); /* Apply scale transformation on active press */
 }
+
 .btnDelivery {
-  border-top-left-radius: 21px !important;
-  border-bottom-left-radius: 21px !important;
-  border-color: #e5be69 !important;
-  color: #e5be69 !important;
+  border-top-left-radius: 20px !important;
+  border-bottom-left-radius: 20px !important;
+  border-color: var(--secondary-color) !important;
+  color: var(--secondary-color) !important;
 }
+
 .btnPickUp {
-  border-top-right-radius: 21px !important;
-  border-bottom-right-radius: 21px !important;
-  border-color: #e5be69 !important;
-  color: #e5be69 !important;
+  border-top-right-radius: 20px !important;
+  border-bottom-right-radius: 20px !important;
+  border-color: var(--secondary-color) !important;
+  color: var(--secondary-color) !important;
 }
+
 .btn-check + .btn:hover {
-  background-color: #e5be69 !important;
+  background-color: var(--secondary-color) !important;
   color: var(--primary-color) !important;
-  border-color: #e5be69 !important;
+  border-color: var(--secondary-color) !important;
+  transform: translateX(
+    2px
+  ); /* Apply transfrom transformation on hover for radio buttons */
 }
+
 .btn-check:checked + .btn,
 .btn.active,
 .btn.show,
 .btn:first-child:active,
 :not(.btn-check) + .btn:active {
-  background-color: #e5be69 !important;
+  background-color: var(--secondary-color) !important;
   color: var(--primary-color) !important;
-  border-color: #e5be69 !important;
+  border-color: var(--secondary-color) !important;
+  transform: translateX(
+    1px
+  ); /* Apply translate transformation on active press for radio buttons */
 }
+
 .navbar-toggler-icon {
   filter: invert(1);
 }

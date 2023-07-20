@@ -10,7 +10,7 @@ const Header = () => {
   return (
     <div>
       <nav className="navbar navbar-expand-lg bgColor">
-        <div className="container-fluid mx-4 pb-2">
+        <div className="container pb-2 mx-auto">
           <Link className="navbar-brand" to="/">
             <img src={Logo} alt="" className='logo' />
           </Link>
