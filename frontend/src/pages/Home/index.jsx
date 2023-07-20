@@ -91,7 +91,7 @@ const Home = () => {
               </div>
             ))
           ) : (
-            <p>No products available</p>
+            <p>No products available !</p>
           )}
         </div>
       </div>
