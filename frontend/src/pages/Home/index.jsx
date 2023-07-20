@@ -3,7 +3,9 @@
 import { useEffect, useReducer } from 'react';
 import axios from 'axios';
 import Header from '../../components/Header'
-import Cards from '../../components/Cards';
+// import Cards from '../../components/Cards';
+import { Link } from 'react-router-dom';
+import '../../components/Cards/Cards.css'
 
 
 const reducer = (state, action) => {
@@ -68,11 +70,13 @@ const Home = () => {
           ) : products.length > 0 ? (
             products.map((product) => (
 
-              <div className="col-md-4">
+              <div className="col-md-4" key={product.slug}>
                 <div className='cardsWrapper'>
                   <div class="card">
                     <div className="imgWrapper">
-                      <img src={product.image} class="card-img-top" alt="product-image" />
+                      <Link to={`/product/${product.slug}`}>
+                        <img src={product.image} class="card-img-top" alt="product Example" />
+                      </Link>
                     </div>
                     <div class="card-body p-2">
                       <div className='d-flex justify-content-between align-items-center'>
@@ -92,7 +96,7 @@ const Home = () => {
         </div>
       </div>
 
-    </div>
+    </div >
   )
 }
 

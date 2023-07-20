@@ -9,7 +9,7 @@ const Cards = () => {
     <div className='cardsWrapper'>
       <div class="card">
         <div className="imgWrapper">
-          <img src={product4} class="card-img-top" alt="product-image" />
+          <img src={product4} class="card-img-top" alt="product Example" />
         </div>
         <div class="card-body p-2">
           <div className='d-flex justify-content-between align-items-center'>

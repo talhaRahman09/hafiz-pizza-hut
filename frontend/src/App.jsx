@@ -1,13 +1,20 @@
 import './App.css';
 import Home from './pages/Home';
-// import ProductDetail from './pages/ProductDetail';
+import ProductScreen from './pages/ProductScreen'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
 function App() {
   return (
-    <div>
-      <Home />
-      {/* <ProductDetail/> */}
-    </div>
+    <BrowserRouter>
+
+      <div>
+        <Routes>
+          <Route path='/product/:slug' element={<ProductScreen />} />
+          <Route path='/' element={<Home />} />
+        </Routes>
+      </div>
+    </BrowserRouter>
+
   );
 }
 
