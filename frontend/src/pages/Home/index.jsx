@@ -59,7 +59,7 @@ const Home = () => {
   }, []);
   return (
     <div>
-      <Header />
+
 
       <div className="container">
         <div className='row'>
