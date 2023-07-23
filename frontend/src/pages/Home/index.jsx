@@ -2,8 +2,8 @@
 
 import { useEffect, useReducer } from 'react';
 import axios from 'axios';
-import Header from '../../components/Header'
-// import Cards from '../../components/Cards';
+import LoadingComponent from '../../components/LoadingComponent'
+import { Alert } from '../../components/Alert'
 import { Link } from 'react-router-dom';
 import '../../components/Cards/Cards.css'
 
@@ -64,9 +64,9 @@ const Home = () => {
       <div className="container">
         <div className='row'>
           {loading ? (
-            <p>Loading...</p>
+            <LoadingComponent />
           ) : error ? (
-            <p>Error: {error}</p>
+            <Alert varient='danger'>{error}</Alert>
           ) : products.length > 0 ? (
             products.map((product) => (
 

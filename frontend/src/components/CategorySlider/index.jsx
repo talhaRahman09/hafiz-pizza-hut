@@ -1,5 +1,7 @@
 import React from 'react'
 import './CategorySlider.css'
+
+
 const index = () => {
     const categories = ['Category 3', 'Category 4', 'Category 5', 'Category 6', 'Category 7', 'Category 8'];
     return (

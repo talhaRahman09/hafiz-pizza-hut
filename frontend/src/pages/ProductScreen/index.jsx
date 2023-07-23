@@ -2,8 +2,10 @@ import { useEffect, useReducer } from 'react';
 import axios from 'axios';
 import './ProductScreen.css';
 import CategorySlider from '../../components/CategorySlider';
+import LoadingComponent from '../../components/LoadingComponent';
 import { useParams } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
+import { Alert } from '../../components/Alert';
 
 const reducer = (state, action) => {
     switch (action.type) {
@@ -44,11 +46,11 @@ const Index = () => {
     }, [slug]);
 
     if (loading) {
-        return <div>Loading...</div>;
+        return <LoadingComponent />;
     }
 
     if (error || !product) {
-        return <div>Error</div>;
+        return <Alert />;
     }
 
     return (
