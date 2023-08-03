@@ -13,8 +13,9 @@ const Header = () => {
   const { state } = useContext(Store);
   const { cart } = state;
   return (
-    <div>
-      <nav className="navbar navbar-expand-lg bgColor">
+    <div className='bgImage'>
+
+      <nav className="navbar navbar-expand-lg ">
         <div className="container pb-2 mx-auto">
           <Link className="navbar-brand" to="/">
             <img src={Logo} alt="" className='logo' />
@@ -62,6 +63,15 @@ const Header = () => {
 
         </div>
       </nav>
+      {/* Text  */}
+
+      <div className='textOverlay'>
+        <h4 className='welcomeText'>Welcome</h4>
+        <h1 className='restaurantText'>Hafiz pizza and Restaurant</h1>
+        <button className='btn btn-ShopNow'>Shop Now</button>
+      </div>
+
+
     </div>
   )
 }

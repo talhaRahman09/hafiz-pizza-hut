@@ -9,7 +9,42 @@
   width: 60px;
   height: 60px;
 }
+.bgImage {
+  background: linear-gradient(rgba(0, 0, 0, 0.925), rgba(0, 0, 0, 0.329)),
+    url('../../../public/images/bgImage.jpg') center/cover;
+  height: 100vh;
+}
 
+.textOverlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.welcomeText {
+  color: var(--secondary-color);
+  font-weight: bold;
+  line-height: 1.5;
+}
+
+.restaurantText {
+  color: white;
+  font-weight: bold;
+  line-height: 1.5;
+}
+
+/* Additional styles for responsiveness */
+@media (max-width: 768px) {
+  .welcomeText {
+    font-size: 18px;
+  }
+
+  .restaurantText {
+    font-size: 28px;
+  }
+}
 .btnSignIn {
   background-color: var(
     --secondary-color
@@ -36,7 +71,18 @@
   border-color: var(--secondary-color) !important;
   transform: scale(0.95); /* Apply scale transformation on active press */
 }
-
+.btn-ShopNow {
+  border-radius: 10px;
+  background: #e5be69;
+  color: #000;
+  font-size: 16px;
+  padding: 10px 20px;
+  border: none;
+  font-weight: bold;
+}
+.btn-ShopNow:hover {
+  background: #d3aa5c;
+}
 .btnDelivery {
   border-top-left-radius: 20px !important;
   border-bottom-left-radius: 20px !important;
@@ -102,9 +148,7 @@
     height: 80px !important;
     width: 80px !important;
   }
-  .bgImage {
-    height: 100px !important;
-  }
+
   .card {
     width: 80% !important;
     margin: 0 auto;
@@ -122,8 +166,5 @@
   .categoryImg {
     height: 80px !important;
     width: 80px !important;
-  }
-  .bgImage {
-    height: 100px !important;
   }
 }
