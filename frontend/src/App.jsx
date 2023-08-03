@@ -9,14 +9,16 @@ function App() {
   return (
     <BrowserRouter>
       <Header />
-      <Helmet>
-        <title>Hafiz Pizza Hut</title>
-      </Helmet>
-      <div>
-        <Routes>
-          <Route path='/product/:slug' element={<ProductScreen />} />
-          <Route path='/' element={<Home />} />
-        </Routes>
+      <div className='container'>
+        <Helmet>
+          <title>Hafiz Pizza Hut</title>
+        </Helmet>
+        <div>
+          <Routes>
+            <Route path='/product/:slug' element={<ProductScreen />} />
+            <Route path='/' element={<Home />} />
+          </Routes>
+        </div>
       </div>
     </BrowserRouter>
 

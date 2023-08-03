@@ -6,6 +6,7 @@ import LoadingComponent from '../../components/LoadingComponent';
 import { useParams } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { Alert } from '../../components/Alert';
+import { getError } from '../utils';
 
 const reducer = (state, action) => {
     switch (action.type) {
@@ -38,7 +39,7 @@ const Index = () => {
                 const response = await axios.get(`/api/products/slug/${slug}`);
                 dispatch({ type: 'FETCH_SUCCESS', payload: response.data });
             } catch (error) {
-                dispatch({ type: 'FETCH_FAIL', payload: error.message });
+                dispatch({ type: 'FETCH_FAIL', payload: getError(error) });
             }
         };
 
@@ -50,11 +51,11 @@ const Index = () => {
     }
 
     if (error || !product) {
-        return <Alert />;
+        return <Alert varient="danger">{error}</Alert>;
     }
 
     return (
-        <div className="container">
+        <div>
             <CategorySlider />
             <div className='productDetailCard my-4'>
                 <div className="row">
