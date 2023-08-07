@@ -1,35 +1,31 @@
 import express from 'express';
-import data from './data.js';
-
+import colors from 'colors';
+import dotenv from 'dotenv';
+import morgan from 'morgan';
+import { connectDb } from './config/db.js';
+// calling the express function
 const app = express();
-app.get('/api/products', (req, res) => {
-  res.send(data);
+// config dotenv
+dotenv.config();
+// connect db
+connectDb();
+
+//middlewares
+app.use(express.json());
+app.use(morgan('dev'));
+
+// rest api
+app.get('/', (req, res) => {
+  // Corrected the order of parameters (req, res)
+  res.send('<h1>Welcome to Hafiz Pizza</h1>');
 });
-app.get('/api/products/slug/:slug', (req, res) => {
-  const product = data.products.find((x) => x.slug === req.params.slug);
-  if (product) {
-    res.send(product);
-  } else {
-    res.status(404).send({ message: 'product not found' });
-  }
-});
-app.get('/api/products/:id', (req, res) => {
-  const product = data.products.find((x) => x._id === req.params.id);
-  if (product) {
-    res.send(product);
-  } else {
-    res.status(404).send({ message: 'Product Not Found' });
-  }
-});
-app.get('/api/products/:id', (req, res) => {
-  const product = data.products.find((x) => x._id === req.params.id);
-  if (product) {
-    res.send(product);
-  } else {
-    res.status(404).send({ message: 'Product Not Found' });
-  }
-});
-const port = process.env.PORT || 5000;
-app.listen(port, () => {
-  console.log(`server listening on http://localhost:${port}`);
+
+// port
+const PORT = process.env.PORT || 8080;
+
+// run listen port
+app.listen(PORT, () => {
+  console.log(
+    `Server is running in ${process.env.DEV}   on Port ${PORT}`.bgBlue.white
+  );
 });
