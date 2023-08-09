@@ -9,7 +9,7 @@ const Footer = () => {
                 <div className="row g-3 justify-content-between">
                     <div className="col-md-4 p-2">
                         <div className="footerLogoHolder">
-                            <img src={footerLogo} alt="" />
+                            <img src={footerLogo} alt="footerLogo" />
                         </div>
                         <p className='my-3'>
                             Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book
@@ -49,8 +49,8 @@ const Footer = () => {
                         <p className='my-3'>
                             Question or feedback? We’d love to hear from you.
                         </p>
-                        <div class=" mb-3">
-                            <input class="form-control  EmailFooter" type="text" placeholder="Your Email" aria-label=".form-control-lg example" />
+                        <div className=" mb-3">
+                            <input className="form-control  EmailFooter" type="text" placeholder="Your Email" aria-label=".form-control-lg example" />
 
                         </div>
                     </div>

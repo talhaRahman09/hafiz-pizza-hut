@@ -1,47 +1,51 @@
-.bgFooter{
-    background-color: #1F1A17;
-    background-color: #1F1A17;
+.bgFooter {
+  background-color: #1f1a17;
+  background-color: #1f1a17;
 }
-.footerLogoHolder img{
-    height: 60px;
-    width: 60px;
+.footerLogoHolder img {
+  height: 60px;
+  width: 60px;
 }
-.bgFooter p{
-    color: #96979D;
+.bgFooter p {
+  color: #96979d;
 }
-.bgFooter p a{
-    color: #96979D;
+.bgFooter p a {
+  color: #96979d;
 }
-.HeadingFooter h5{
-    color: #E5BE69;
+.HeadingFooter h5 {
+  color: #e5be69;
 }
-.EmailFooter{
-    background-color: #1F1A17 !important;
-    color: #E5BE69 !important;
-    padding: 10px;
+.EmailFooter {
+  background-color: #1f1a17 !important;
+  color: #e5be69 !important;
+  padding: 10px;
 }
-.EmailFooter:focus{
-    outline: 0 !important;
-    border-color: none !important;
-    box-shadow: none !important;
+.EmailFooter:focus {
+  outline: 0 !important;
+  border-color: none !important;
+  box-shadow: none !important;
 }
-::-webkit-input-placeholder { /* WebKit browsers */
-    color:    #96979D !important;
+::-webkit-input-placeholder {
+  /* WebKit browsers */
+  color: #96979d !important;
 }
-:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-   color:    #96979D !important;
-   opacity:  1;
+:-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  color: #96979d !important;
+  opacity: 1;
 }
-::-moz-placeholder { /* Mozilla Firefox 19+ */
-   color:    #96979D !important;
-   opacity:  1;
+::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  color: #96979d !important;
+  opacity: 1;
 }
-:-ms-input-placeholder { /* Internet Explorer 10+ */
-   color:    #96979D !important;
+:-ms-input-placeholder {
+  /* Internet Explorer 10+ */
+  color: #96979d !important;
 }
-.EmailFooter{
-    border: 1px solid #96979D !important;
+.EmailFooter {
+  border: 1px solid #96979d !important;
 }
 .form-floating:not(.form-control:disabled)::before {
-    background-color: none !important;
+  background-color: none !important;
 }

@@ -2,7 +2,7 @@ import React from 'react';
 import Header from "../Header/Index"
 import Footer from '../Footer/Index';
 import { Helmet } from "react-helmet";
-import { Toaster } from 'react-hot-toast'
+import { ToastContainer } from 'react-toastify'
 
 const Layout = ({ children, title }) => {
     return (
@@ -12,7 +12,7 @@ const Layout = ({ children, title }) => {
                 <title>{title}</title>
             </Helmet>
             <Header />
-            <Toaster />
+            <ToastContainer />
             <main>
                 {children}
             </main>

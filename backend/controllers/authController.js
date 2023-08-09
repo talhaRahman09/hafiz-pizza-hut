@@ -13,7 +13,7 @@ export const registerController = async (req, res) => {
       phone,
     }).save();
     res.status(201).send({
-      data: 'successful registration',
+      message: 'Registered Successfully 😍',
       success: true,
       user,
     });
