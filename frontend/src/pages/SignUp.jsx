@@ -106,7 +106,7 @@ const SignUp = () => {
                                             required
                                         />
                                     </div>
-                                    <button type="submit" className="btn btn-secondary w-100">
+                                    <button type="submit" className="btn submitBtn w-100">
                                         Register
                                     </button>
                                 </form>

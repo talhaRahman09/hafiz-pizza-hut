@@ -7,3 +7,8 @@
   box-shadow: rgba(150, 128, 58, 0.25) 0px 50px 100px -20px,
     rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
 }
+.submitBtn {
+  background-color: #e5be69 !important;
+  color: var(--primary-color) !important;
+  border-color: #e5be69 !important;
+}

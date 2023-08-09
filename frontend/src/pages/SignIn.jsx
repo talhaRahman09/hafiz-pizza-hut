@@ -77,8 +77,8 @@ const SignIn = () => {
                                         />
                                     </div>
 
-                                    <button type="submit" className="btn btn-secondary w-100">
-                                        Register
+                                    <button type="submit" className="btn submitBtn w-100">
+                                        Sign In
                                     </button>
                                 </form>
                             </div>
