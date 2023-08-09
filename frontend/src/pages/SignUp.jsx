@@ -9,13 +9,12 @@ const SignUp = () => {
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
-    const [confirmPassword, setConfirmPassword] = useState('')
     const [phone, setPhone] = useState('')
 
     const handleSubmit = async (e) => {
         e.preventDefault()
         try {
-            const res = await axios.post('/api/v1/auth/register', { name, email, password, confirmPassword, phone })
+            const res = await axios.post(`${process.env.BACKEND_API}/api/v1/auth/register`, { name, email, password, phone })
             if (res.data.success) {
                 toast.success(res.data.message)
             }
@@ -79,20 +78,6 @@ const SignUp = () => {
                                             name="password"
                                             value={password}
                                             onChange={(e) => setPassword(e.target.value)}
-                                            required
-                                        />
-                                    </div>
-                                    <div className="mb-3">
-                                        <label htmlFor="confirmPassword" className="form-label">
-                                            Confirm Password
-                                        </label>
-                                        <input
-                                            type="password"
-                                            className="form-control"
-                                            id="confirmPassword"
-                                            name="confirmPassword"
-                                            value={confirmPassword}
-                                            onChange={(e) => setConfirmPassword(e.target.value)}
                                             required
                                         />
                                     </div>

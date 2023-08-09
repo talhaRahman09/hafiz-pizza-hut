@@ -15,11 +15,7 @@ const userSchema = mongoose.Schema(
       type: String,
       required: true,
     },
-    confirmPassword: {
-      // Corrected property name
-      type: String, // Corrected typo: "types" to "type"
-      required: true,
-    },
+
     role: {
       type: Number,
       default: 0,
