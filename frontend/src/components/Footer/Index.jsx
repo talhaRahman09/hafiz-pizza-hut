@@ -25,10 +25,10 @@ const Footer = () => {
                             <h5 className='fw-bold'>Important Links</h5>
                         </div>
                         <p className='my-3'>
-                            <NavLink href="#" className='text-decoration-none'>About Us</NavLink>
+                            <NavLink to="/about-us" className='text-decoration-none'>About Us</NavLink>
                         </p>
                         <p>
-                            <NavLink href="#" className='text-decoration-none'>Contact Us</NavLink>
+                            <NavLink to="/contact" className='text-decoration-none'>Contact Us</NavLink>
                         </p>
                         <p>
                             <NavLink href="#" className='text-decoration-none'>Agent Contact</NavLink>
