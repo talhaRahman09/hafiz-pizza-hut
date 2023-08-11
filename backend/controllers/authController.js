@@ -72,6 +72,7 @@ export const loginController = async (req, res) => {
       success: true,
       message: 'Login successfully 😍',
       token: token,
+      user,
     });
   } catch (error) {
     console.log(error);

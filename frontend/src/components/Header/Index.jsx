@@ -4,8 +4,17 @@ import './Header.css'
 import logo from '../../assets/Images/Logo.png'
 import logistic from '../../assets/Images/logistics.png'
 import pickup from '../../assets/Images/pickup.png'
-
+import { useAuth } from '../../context/auth'
 const Header = () => {
+    const { user, setUser } = useAuth()
+    const logOut = () => {
+        setUser({
+            ...user,
+            user: null,
+            token: '',
+        })
+        localStorage.removeItem("auth")
+    }
     return (
         <nav className="navbar navbar-expand-lg bgColor">
             <div className="container">
@@ -45,8 +54,14 @@ const Header = () => {
                                 <text x="50%" y="64%" dy=".3em" textAnchor="middle" fontSize={6} fontWeight="bold">0</text>
                             </svg>
                         </span>
-                        <NavLink to="/sign-up" type="button" className="btn btnSignIn d-md-none d-lg-block d-block  mt-lg-0 mt-3  me-2">Sign Up</NavLink>
-                        <NavLink to="/sign-in" type="button" className="btn btnSignIn d-md-none d-lg-block d-block  mt-lg-0 mt-3  me-2">Sign In</NavLink>
+                        {!user.user ? (
+                            <>
+                                <NavLink to="/sign-up" type="button" className="btn btnSignIn d-md-none d-lg-block d-block  mt-lg-0 mt-3  me-2">Sign Up</NavLink>
+                                <NavLink to="/sign-in" type="button" className="btn btnSignIn d-md-none d-lg-block d-block  mt-lg-0 mt-3  me-2">Sign In</NavLink>
+                            </>
+                        ) : (
+                            <NavLink to="/" onClick={logOut} type="button" className="btn btnSignIn d-md-none d-lg-block d-block  mt-lg-0 mt-3  me-2">LogOut</NavLink>
+                        )}
                     </div>
                 </div>
             </div>

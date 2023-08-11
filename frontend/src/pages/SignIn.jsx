@@ -6,10 +6,12 @@ import { useState } from 'react';
 import { toast } from 'react-toastify';
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../context/auth';
 const SignIn = () => {
 
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
+    const { user, setUser } = useAuth();
     const navigate = useNavigate()
 
     const handleSubmit = async (e) => {
@@ -20,9 +22,14 @@ const SignIn = () => {
                 password,
 
             });
-            console.log(res.data.message)
-            if (res.data.success) {
-                toast.success(res.data.message);
+            if (res && res.data.success) {
+                toast.success(res.data && res.data.message);
+                setUser({
+                    ...user,
+                    user: res.data.user,
+                    token: res.data.token,
+                })
+                localStorage.setItem('auth', JSON.stringify(res.data))
                 navigate("/")
             }
         } catch (error) {
