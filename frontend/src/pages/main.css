@@ -12,3 +12,13 @@
   color: var(--primary-color) !important;
   border-color: #e5be69 !important;
 }
+.View100 {
+  min-height: calc(100vh - 0.5px);
+}
+.bgImgSignUp {
+  background: linear-gradient(180deg, #1f1a17 0%, #1f1d19f1 100%);
+}
+.LoginLogo {
+  height: 200px;
+  width: 200px;
+}

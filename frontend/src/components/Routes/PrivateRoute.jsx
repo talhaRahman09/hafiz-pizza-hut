@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { Outlet } from "react-router-dom";
 import axios from "axios";
 import { useAuth } from "../../context/auth";
+import Forbidden from "../UnathorizedAccess/Forbidden";
 
 export const PrivateRoute = () => {
     const [ok, setOk] = useState(false);
@@ -20,5 +21,5 @@ export const PrivateRoute = () => {
             }
         }
     }, [])
-    return ok ? <Outlet /> : 'spinner'
+    return ok ? <Outlet /> : <Forbidden />
 }

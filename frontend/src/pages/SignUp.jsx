@@ -4,7 +4,7 @@ import logo from '../assets/Images/Logo.png'
 import './main.css';
 import { useState } from 'react';
 import { toast } from 'react-toastify'
-
+import restaurantImage from '../assets/Images/Logo.png'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom';
 const SignUp = () => {
@@ -35,15 +35,15 @@ const SignUp = () => {
 
     return (
 
-        <div className="container mt-5">
+        <div className="container-fluid">
             <div className="row justify-content-center">
-                <div className="col-md-8">
-                    <img src="" alt="" />
+                <div className="View100 col-md-6 col-lg-6  bgImgSignUp flex-column d-lg-flex align-items-center justify-content-center d-none">
+                    <img src={restaurantImage} className="img-fluid LoginLogo" alt="" />
                 </div>
-                <div className="col-md-4">
-                    <div className="card p-4">
+                <div className="col-md-12 col-lg-6 d-flex flex-column justify-content-center align-items-center">
+                    <div className="card w-75 p-4">
 
-                        <div className="card-body p-2">
+                        <div className="card-body p-0">
                             <div className="text-center">
                                 <img className='logo' src={logo} alt="" />
                                 <h3>Sign Up</h3>
