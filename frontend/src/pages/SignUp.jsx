@@ -6,7 +6,7 @@ import { useState } from 'react';
 import { toast } from 'react-toastify'
 import restaurantImage from '../assets/Images/Logo.png'
 import axios from 'axios'
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 const SignUp = () => {
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
@@ -36,11 +36,11 @@ const SignUp = () => {
     return (
 
         <div className="container-fluid">
-            <div className="row justify-content-center">
+            <div className="row" style={{ minHeight: '100vh' }}>
                 <div className="View100 col-md-6 col-lg-6  bgImgSignUp flex-column d-lg-flex align-items-center justify-content-center d-none">
                     <img src={restaurantImage} className="img-fluid LoginLogo" alt="" />
                 </div>
-                <div className="col-md-12 col-lg-6 d-flex flex-column justify-content-center align-items-center">
+                <div className="col-md-12 col-lg-6 d-flex flex-column justify-content-center align-items-center authBackground">
                     <div className="card w-75 p-4">
 
                         <div className="card-body p-0">
@@ -108,6 +108,10 @@ const SignUp = () => {
                                 <button type="submit" className="btn submitBtn w-100">
                                     Register
                                 </button>
+                                <div className='rule m-3'>
+                                    <span className='rule__text'>OR</span>
+                                </div>
+                                <Link to='/sign-in'><p class="btn submitBtn w-100">Login Here</p></Link>
                             </form>
                         </div>
                     </div>

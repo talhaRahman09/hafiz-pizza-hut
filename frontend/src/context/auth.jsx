@@ -1,40 +1,34 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
 import axios from "axios";
 
-
 const AuthContext = createContext();
 
 const AuthProvider = ({ children }) => {
-    const [user, setUser] = useState({
+    const [auth, setAuth] = useState({
         user: null,
         token: "",
     });
-    //default axios 
-    axios.defaults.headers.common['Authorization'] = user?.token;
+
     useEffect(() => {
         const data = localStorage.getItem('auth');
         if (data) {
             const parsedData = JSON.parse(data);
-            setUser({
+            setAuth({
                 user: parsedData.user,
                 token: parsedData.token
             });
         }
         //eslint-disable-next-line
     }, []);
+
+
     return (
-        <AuthContext.Provider value={{ user, setUser }}>
+        <AuthContext.Provider value={[auth, setAuth]}>
             {children}
         </AuthContext.Provider>
     );
 };
 
-const useAuth = () => {
-    const authContext = useContext(AuthContext);
-    if (!authContext) {
-        throw new Error("useAuth must be used within an AuthProvider");
-    }
-    return authContext;
-};
+const useAuth = () => useContext(AuthContext);
 
 export { useAuth, AuthProvider };

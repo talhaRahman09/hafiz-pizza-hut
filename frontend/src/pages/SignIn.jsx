@@ -5,14 +5,14 @@ import './main.css';
 import { useState } from 'react';
 import { toast } from 'react-toastify';
 import axios from 'axios'
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/auth';
 import restaurantImage from '../assets/Images/Logo.png'
 const SignIn = () => {
 
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
-    const { user, setUser } = useAuth();
+    const [auth, setUser] = useAuth();
     const navigate = useNavigate()
 
     const handleSubmit = async (e) => {
@@ -26,7 +26,7 @@ const SignIn = () => {
             if (res && res.data.success) {
                 toast.success(res.data && res.data.message);
                 setUser({
-                    ...user,
+                    ...auth,
                     user: res.data.user,
                     token: res.data.token,
                 })
@@ -41,11 +41,11 @@ const SignIn = () => {
     return (
 
         <div className='container-fluid'>
-            <div className="row ">
+            <div className="row" style={{ minHeight: '100vh' }}>
                 <div className="View100 col-md-6 col-lg-6  bgImgSignUp flex-column d-lg-flex align-items-center justify-content-center d-none">
                     <img src={restaurantImage} className="img-fluid LoginLogo" alt="" />
                 </div>
-                <div className="col-md-12 col-lg-6 d-flex flex-column justify-content-center align-items-center ">
+                <div className="col-md-12 col-lg-6 d-flex flex-column justify-content-center align-items-center authBackground ">
                     <div className="card w-75 p-4">
                         <div className="card-body p-2">
                             <div className="text-center">
@@ -84,8 +84,12 @@ const SignIn = () => {
                                 </div>
 
                                 <button type="submit" className="btn submitBtn w-100">
-                                    Sign In
+                                    Login
                                 </button>
+                                <div className='rule m-3'>
+                                    <span className='rule__text'>OR</span>
+                                </div>
+                                <Link to='/sign-up'><p class="btn submitBtn w-100">Register Here</p></Link>
                             </form>
                         </div>
                     </div>

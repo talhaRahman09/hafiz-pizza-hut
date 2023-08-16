@@ -6,10 +6,10 @@ import logistic from '../../assets/Images/logistics.png'
 import pickup from '../../assets/Images/pickup.png'
 import { useAuth } from '../../context/auth'
 const Header = () => {
-    const { user, setUser } = useAuth()
+    const [auth, setAuth] = useAuth()
     const logOut = () => {
-        setUser({
-            ...user,
+        setAuth({
+            ...auth,
             user: null,
             token: '',
         })
@@ -54,7 +54,7 @@ const Header = () => {
                                 <text x="50%" y="64%" dy=".3em" textAnchor="middle" fontSize={6} fontWeight="bold">0</text>
                             </svg>
                         </span>
-                        {!user.user ? (
+                        {!auth.user ? (
                             <>
                                 <NavLink to="/sign-up" type="button" className="btn btnSignIn d-md-none d-lg-block d-block  mt-lg-0 mt-3  me-2">Sign Up</NavLink>
                                 <NavLink to="/sign-in" type="button" className="btn btnSignIn d-md-none d-lg-block d-block  mt-lg-0 mt-3  me-2">Sign In</NavLink>

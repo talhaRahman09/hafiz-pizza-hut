@@ -4,12 +4,12 @@ import { useAuth } from '../context/auth';
 
 
 const HomePage = () => {
-    const { user } = useAuth()
+    const [auth] = useAuth()
     return (
         <Layout title={"Hafiz Pizza Hut"}>
             <h1 className="text-center">Home Page</h1>
             <pre>
-                {JSON.stringify(user, null, 4)}
+                {JSON.stringify(auth, null, 4)}
             </pre>
         </Layout>
     );
