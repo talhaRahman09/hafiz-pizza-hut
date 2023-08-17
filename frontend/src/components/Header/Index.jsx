@@ -47,8 +47,8 @@ const Header = () => {
                         </label>
                     </div>
 
-                    <div className="nav-link my-md-0 my-3 text-center d-flex justify-content-center">
-                        <span className="me-5 btnBucket d-lg-block d-none " type="button" >
+                    <div className="nav-link my-md-0 my-3 text-center d-flex justify-content-center align-items-center">
+                        <span className="me-4 btnBucket d-lg-block d-none " type="button" >
                             <svg xmlns="http://www.w3.org/2000/svg" width={30} height={30} fill="#E5BE69" className="bi bi-bucket" viewBox="0 0 16 16">
                                 <path d="M2.522 5H2a.5.5 0 0 0-.494.574l1.372 9.149A1.5 1.5 0 0 0 4.36 16h7.278a1.5 1.5 0 0 0 1.483-1.277l1.373-9.149A.5.5 0 0 0 14 5h-.522A5.5 5.5 0 0 0 2.522 5zm1.005 0a4.5 4.5 0 0 1 8.945 0H3.527zm9.892 1-1.286 8.574a.5.5 0 0 1-.494.426H4.36a.5.5 0 0 1-.494-.426L2.58 6h10.838z" />
                                 <text x="50%" y="64%" dy=".3em" textAnchor="middle" fontSize={6} fontWeight="bold">0</text>
@@ -60,7 +60,21 @@ const Header = () => {
                                 <NavLink to="/sign-in" type="button" className="btn btnSignIn d-md-none d-lg-block d-block  mt-lg-0 mt-3  me-2">Sign In</NavLink>
                             </>
                         ) : (
-                            <NavLink to="/" onClick={logOut} type="button" className="btn btnSignIn d-md-none d-lg-block d-block  mt-lg-0 mt-3  me-2">LogOut</NavLink>
+                            <li className="nav-item dropdown d-flex align-items-center">
+                                <NavLink className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    {auth?.user.name}
+                                </NavLink>
+                                <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li className='dropdown-item px-0 my-0'>
+                                        <NavLink to="/dashboard" type="button" className="dropdown-item">Profile</NavLink>
+                                    </li>
+                                    <li className='dropdown-item px-0 my-0'>
+                                        <NavLink to="/" onClick={logOut} type="button" className="dropdown-item">LogOut</NavLink>
+                                    </li>
+                                </ul>
+                            </li>
+
+
                         )}
                     </div>
                 </div>

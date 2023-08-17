@@ -5,7 +5,7 @@ import './main.css';
 import { useState } from 'react';
 import { toast } from 'react-toastify';
 import axios from 'axios'
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../context/auth';
 import restaurantImage from '../assets/Images/Logo.png'
 const SignIn = () => {
@@ -14,6 +14,7 @@ const SignIn = () => {
     const [password, setPassword] = useState('')
     const [auth, setUser] = useAuth();
     const navigate = useNavigate()
+    const location = useLocation()
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -31,7 +32,7 @@ const SignIn = () => {
                     token: res.data.token,
                 })
                 localStorage.setItem('auth', JSON.stringify(res.data))
-                navigate("/")
+                navigate(location.state || "/")
             }
         } catch (error) {
             toast.error('Something Went Wrong😞');

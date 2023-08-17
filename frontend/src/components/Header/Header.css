@@ -36,6 +36,42 @@
   transform: translateY(-0.2rem) !important;
 }
 
+.nav-item {
+  position: relative;
+}
+
+.nav-link {
+  color: var(--secondary-color); /* Change text color to secondary */
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: var(--secondary-color); /* Change hover text color to primary */
+}
+
+.dropdown-menu {
+  background-color: var(--primary-color);
+  border: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-item {
+  color: var(
+    --secondary-color
+  ); /* Change dropdown item text color to secondary */
+  transition: color 0.3s ease;
+}
+
+.dropdown-item:hover {
+  background-color: #1f1a17;
+  color: var(--secondary-color);
+  font-weight: bold;
+}
+.dropdown-item .active {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+}
 .btnSignIn:active {
   background-color: #e5be691a !important;
   color: #f1f8f9 !important;
